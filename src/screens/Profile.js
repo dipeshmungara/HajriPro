@@ -32,7 +32,7 @@ const Profile = ({navigation}) => {
               width: responsiveHeight(10.4),
               aspectRatio: 1,
             }}
-            source={{uri: 'https://george-fx.github.io/apitex/users/01.png'}}
+            source={require('../assets/icons/user.png')}
           />
         </TouchableOpacity>
         <Text

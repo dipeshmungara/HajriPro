@@ -8,11 +8,13 @@ import {components} from '../components';
 import {svg} from '../assets/svg';
 import {theme} from '../constants';
 
-import Dashboard from '../screens/tabs/Dashboard';
-import Deposits from '../screens/tabs/Deposits';
-import Loans from '../screens/tabs/Loans';
-import Notification from '../screens/tabs/Notification';
-import More from '../screens/tabs/More';
+// Import role-based dashboards
+import OwnerDashboard from '../screens/OwnerDashboard';
+import WorkerDashboard from '../screens/WorkerDashboard';
+import PartnerDashboard from '../screens/PartnerDashboard';
+import AttendanceOverview from '../screens/AttendanceOverview';
+import Reports from '../screens/Reports';
+import Profile from '../screens/Profile';
 
 const TabNavigator = () => {
   const dispatch = useDispatch();
@@ -20,28 +22,33 @@ const TabNavigator = () => {
   const insets = useSafeAreaInsets();
   const homeIndicatorHeight = insets.bottom;
 
-  const tabs = [
-    {
-      name: 'Dashboard',
-      icon: svg.DashboardSvg,
-    },
-    {
-      name: 'Deposits',
-      icon: svg.WalletSvg,
-    },
-    {
-      name: 'Loans',
-      icon: svg.PercentageSvg,
-    },
-    {
-      name: 'Notification',
-      icon: svg.NotificationSvg,
-    },
-    {
-      name: 'More',
-      icon: svg.MoreSvg,
-    },
-  ];
+  // TODO: Get user role from store/context
+  const userRole = 'owner'; // 'owner', 'worker', or 'partner'
+
+  const getTabs = () => {
+    if (userRole === 'owner') {
+      return [
+        {name: 'Dashboard', icon: svg.DashboardSvg},
+        {name: 'Attendance', icon: svg.NotificationSvg},
+        {name: 'Reports', icon: svg.FileTextSvg},
+        {name: 'Profile', icon: svg.UserSvg},
+      ];
+    } else if (userRole === 'worker') {
+      return [
+        {name: 'Dashboard', icon: svg.DashboardSvg},
+        {name: 'Profile', icon: svg.UserSvg},
+      ];
+    } else {
+      // partner
+      return [
+        {name: 'Dashboard', icon: svg.DashboardSvg},
+        {name: 'Attendance', icon: svg.NotificationSvg},
+        {name: 'Profile', icon: svg.UserSvg},
+      ];
+    }
+  };
+
+  const tabs = getTabs();
 
   const renderStatusBar = () => {
     return (
@@ -59,26 +66,31 @@ const TabNavigator = () => {
   };
 
   const renderHeader = () => {
-    if (currentTabScreen === 'Dashboard') {
+    if (currentTabScreen === 'Dashboard' && userRole === 'owner') {
       return (
         <components.Header
-          creditCard={currentTabScreen === 'Dashboard' && true}
-          user={currentTabScreen === 'Dashboard' && true}
+          user={true}
         />
       );
     }
   };
 
   const renderScreen = () => {
-    return (
-      <View style={{flex: 1}}>
-        {currentTabScreen === 'Dashboard' && <Dashboard />}
-        {currentTabScreen === 'Deposits' && <Deposits />}
-        {currentTabScreen === 'Loans' && <Loans />}
-        {currentTabScreen === 'Notification' && <Notification />}
-        {currentTabScreen === 'More' && <More />}
-      </View>
-    );
+    if (userRole === 'owner') {
+      if (currentTabScreen === 'Dashboard') return <OwnerDashboard />;
+      if (currentTabScreen === 'Attendance') return <AttendanceOverview />;
+      if (currentTabScreen === 'Reports') return <Reports />;
+      if (currentTabScreen === 'Profile') return <Profile />;
+    } else if (userRole === 'worker') {
+      if (currentTabScreen === 'Dashboard') return <WorkerDashboard />;
+      if (currentTabScreen === 'Profile') return <Profile />;
+    } else {
+      // partner
+      if (currentTabScreen === 'Dashboard') return <PartnerDashboard />;
+      if (currentTabScreen === 'Attendance') return <AttendanceOverview />;
+      if (currentTabScreen === 'Profile') return <Profile />;
+    }
+    return <OwnerDashboard />;
   };
 
   const renderBottomTab = () => {
@@ -88,7 +100,7 @@ const TabNavigator = () => {
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
-          backgroundColor: theme.colors.mainDark,
+          backgroundColor: theme.colors.primaryDark,
           borderRadius: 14,
           height: 63,
           paddingHorizontal: 10,
@@ -111,12 +123,12 @@ const TabNavigator = () => {
                 <tab.icon
                   color={
                     currentTabScreen === tab.name
-                      ? theme.colors.mainColor
+                      ? theme.colors.accent
                       : theme.colors.white
                   }
                 />
-                {tab.name === 'Notification' &&
-                  currentTabScreen !== 'Notification' && (
+                {tab.name === 'Attendance' &&
+                  currentTabScreen !== 'Attendance' && (
                     <View
                       style={{
                         width: 8,
@@ -124,7 +136,7 @@ const TabNavigator = () => {
                         borderRadius: 8 / 2,
                         right: 0,
                         top: 0,
-                        backgroundColor: theme.colors.mainColor,
+                        backgroundColor: theme.colors.accent,
                         position: 'absolute',
                       }}
                     />
@@ -140,7 +152,7 @@ const TabNavigator = () => {
   return (
     <components.SafeAreaView
       edges={['top']}
-      background={currentTabScreen === 'Notification' ? true : false}
+      background={currentTabScreen === 'Attendance' ? true : false}
     >
       {renderStatusBar()}
       {renderHeader()}

@@ -1,67 +1,55 @@
-import SignIn from './SignIn';
-import SignUp from './SignUp';
+// Core screens
 import Onboarding from './Onboarding';
-import ForgotPassword from './ForgotPassword';
-import NewPassword from './NewPassword';
-import ForgotPasswordSentEmail from './ForgotPasswordSentEmail';
-import VerifyYourPhoneNumber from './VerifyYourPhoneNumber';
-import ConfirmationCode from './ConfirmationCode';
-import SignUpAccountCreated from './SignUpAccountCreated';
-import SignInCode from './SignInCode';
-import OpenDeposit from './OpenDeposit';
-import OpenMoneybox from './OpenMoneybox';
-import OpenNewLoan from './OpenNewLoan';
-import OpenNewCard from './OpenNewCard';
-import CreateInvoice from './CreateInvoice';
-import InvoiceSent from './InvoiceSent';
-import Statistics from './Statistics';
-import FAQ from './FAQ';
-import PrivacyPolicy from './PrivacyPolicy';
+import LanguageSelection from './LanguageSelection';
+import OTPLogin from './OTPLogin';
 import Profile from './Profile';
 import EditPersonalInfo from './EditPersonalInfo';
-import CardMenu from './CardMenu';
-import CardDetails from './CardDetails';
-import ChangePinCode from './ChangePinCode';
-import Payments from './Payments';
-import TopUpPayment from './TopUpPayment';
-import MobilePayment from './MobilePayment';
-import FundTransfer from './FundTransfer';
-import IBANPayment from './IBANPayment';
-import TransactionDetails from './TransactionDetails';
-import PaymentFailed from './PaymentFailed';
-import PaymentSuccess from './PaymentSuccess';
+
+// Worker screens
+import WorkerDashboard from './WorkerDashboard';
+import CheckIn from './CheckIn';
+import CheckOut from './CheckOut';
+import CheckInSuccess from './CheckInSuccess';
+import CheckOutSuccess from './CheckOutSuccess';
+
+// Owner screens
+import OwnerDashboard from './OwnerDashboard';
+import ProjectList from './ProjectList';
+import ProjectDetail from './ProjectDetail';
+import AddProject from './AddProject';
+import WorkerList from './WorkerList';
+import AddWorker from './AddWorker';
+import AttendanceOverview from './AttendanceOverview';
+import Reports from './Reports';
+
+// Partner screens
+import PartnerDashboard from './PartnerDashboard';
 
 export const screens = {
-  SignIn,
-  SignUp,
+  // Core
   Onboarding,
-  ForgotPassword,
-  NewPassword,
-  ForgotPasswordSentEmail,
-  VerifyYourPhoneNumber,
-  ConfirmationCode,
-  SignUpAccountCreated,
-  SignInCode,
-  OpenDeposit,
-  OpenMoneybox,
-  OpenNewLoan,
-  OpenNewCard,
-  CreateInvoice,
-  InvoiceSent,
-  Statistics,
-  FAQ,
-  PrivacyPolicy,
+  LanguageSelection,
+  OTPLogin,
   Profile,
   EditPersonalInfo,
-  CardMenu,
-  CardDetails,
-  ChangePinCode,
-  Payments,
-  TopUpPayment,
-  MobilePayment,
-  FundTransfer,
-  IBANPayment,
-  TransactionDetails,
-  PaymentFailed,
-  PaymentSuccess,
+  
+  // Worker
+  WorkerDashboard,
+  CheckIn,
+  CheckOut,
+  CheckInSuccess,
+  CheckOutSuccess,
+  
+  // Owner
+  OwnerDashboard,
+  ProjectList,
+  ProjectDetail,
+  AddProject,
+  WorkerList,
+  AddWorker,
+  AttendanceOverview,
+  Reports,
+  
+  // Partner
+  PartnerDashboard,
 };

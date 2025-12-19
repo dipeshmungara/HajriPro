@@ -31,38 +31,38 @@ const operations = [
 const cards = [
   {
     id: 1,
-    image: 'https://george-fx.github.io/apitex/cards/01.jpg',
+    image: 'https://george-fx.github.io/hajripro/cards/01.jpg',
   },
   {
     id: 2,
-    image: 'https://george-fx.github.io/apitex/cards/02.jpg',
+    image: 'https://george-fx.github.io/hajripro/cards/02.jpg',
   },
 ];
 
 const persons = [
   {
     id: 1,
-    image: 'https://george-fx.github.io/apitex/users/02.png',
+    image: 'https://george-fx.github.io/hajripro/users/02.png',
     name: 'Jazmine C.',
   },
   {
     id: 2,
-    image: 'https://george-fx.github.io/apitex/users/03.png',
+    image: 'https://george-fx.github.io/hajripro/users/03.png',
     name: 'Bryan C.',
   },
   {
     id: 3,
-    image: 'https://george-fx.github.io/apitex/users/04.png',
+    image: 'https://george-fx.github.io/hajripro/users/04.png',
     name: 'Dalia H.',
   },
   {
     id: 4,
-    image: 'https://george-fx.github.io/apitex/users/05.png',
+    image: 'https://george-fx.github.io/hajripro/users/05.png',
     name: 'Marcus B.',
   },
   {
     id: 5,
-    image: 'https://george-fx.github.io/apitex/users/06.png',
+    image: 'https://george-fx.github.io/hajripro/users/06.png',
     name: 'Angel B.',
   },
 ];

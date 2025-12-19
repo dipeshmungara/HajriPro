@@ -18,23 +18,23 @@ import {theme} from '../constants';
 const onboardingData = [
   {
     id: 1,
-    title: 'Welcome to Apitex\nbank app!',
+    title: 'Welcome to HajriPro\nDigital Hajri, Zero Confusion!',
     description:
-      'Labore sunt culpa excepteur culpa ipsum. Labore occaecat ex nisi mollit.',
+      'Manage construction site attendance digitally with GPS-based check-in. Simple, reliable, and designed for workers.',
     image: require('../assets/images/01.png'),
   },
   {
     id: 2,
-    title: 'Get a new card in a\nfew clicks!',
+    title: 'Location-Based\nAttendance',
     description:
-      'Labore sunt culpa excepteur culpa ipsum. Labore occaecat ex nisi mollit.',
+      'Check-in and check-out using GPS. Automatic attendance tracking within project radius. No manual entry needed.',
     image: require('../assets/images/01.png'),
   },
   {
     id: 3,
-    title: 'Easy payments all\nover the world!',
+    title: 'Simple for Workers\nPowerful for Owners',
     description:
-      'Labore sunt culpa excepteur culpa ipsum. Labore occaecat ex nisi mollit.',
+      'Easy-to-use interface for workers. Comprehensive dashboards and reports for builders and project owners.',
     image: require('../assets/images/01.png'),
   },
 ];
@@ -184,20 +184,19 @@ const Onboarding = ({navigation}) => {
         <TouchableOpacity
           style={{
             width: responsiveWidth(40),
-            backgroundColor: '#FFD9C3',
+            backgroundColor: theme.colors.accent,
             paddingVertical: responsiveHeight(1.5),
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: responsiveHeight(1),
           }}
           onPress={() => {
-            navigation.navigate('SignIn');
-            // navigation.navigate('SignInCode');
+            navigation.navigate('LanguageSelection');
           }}
         >
           <Text
             style={{
-              color: theme.colors.mainDark,
+              color: theme.colors.white,
               ...theme.fonts.SourceSansPro_SemiBold_16,
             }}
           >
@@ -209,7 +208,7 @@ const Onboarding = ({navigation}) => {
   };
 
   return (
-    <View style={{flex: 1, backgroundColor: theme.colors.mainDark}}>
+    <View style={{flex: 1, backgroundColor: theme.colors.primaryDark}}>
       {renderImageBackground()}
       <SafeAreaView edges={['top', 'bottom']} style={{flex: 1}}>
         {renderStatusBar()}

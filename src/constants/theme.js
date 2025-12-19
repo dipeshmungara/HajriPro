@@ -8,77 +8,97 @@ import {
 const {width, height} = Dimensions.get('window');
 
 const colors = {
-  mainDark: '#040325',
-  mainColor: '#FF8A71',
-  bodyTextColor: '#6C6D84',
+  // Primary: Indigo / Dark Blue (as per MD file)
+  mainDark: '#1E3A8A', // Indigo-800
+  mainColor: '#3B82F6', // Indigo-500
+  primary: '#4F46E5', // Indigo-600
+  primaryDark: '#312E81', // Indigo-900
+  
+  // Secondary: Purple Accent
+  accent: '#9333EA', // Purple-600
+  accentLight: '#A855F7', // Purple-500
+  
+  // Background: White
   white: '#FFFFFF',
+  background: '#F9FAFB', // Gray-50
   transparent: 'transparent',
-  textColor: '#4A5F73',
+  
+  // Text colors
+  bodyTextColor: '#6B7280', // Gray-500
+  textColor: '#1F2937', // Gray-800
+  textLight: '#9CA3AF', // Gray-400
+  
+  // UI colors
   lightBlue: '#DBE9F5',
-  accent: '#F84C6B',
-  strokeColor: '#DBE9F5',
-  imageBackground: '#F6F8FB',
+  strokeColor: '#E5E7EB', // Gray-200
+  imageBackground: '#F3F4F6', // Gray-100
+  
+  // Status colors
+  success: '#10B981', // Green-500
+  error: '#EF4444', // Red-500
+  warning: '#F59E0B', // Amber-500
 };
 
+// Use exact lowercase font names as registered in App.js
 const fonts = {
   SourceSansPro_Regular_40: {
-    fontFamily: 'SourceSansPro-Regular',
+    fontFamily: 'SourceSansPro-regular',
     fontSize: responsiveFontSize(5.2),
   },
   SourceSansPro_Regular_32: {
-    fontFamily: 'SourceSansPro-Regular',
+    fontFamily: 'SourceSansPro-regular',
     fontSize: responsiveFontSize(4.2),
   },
   SourceSansPro_SemiBold_32: {
-    fontFamily: 'SourceSansPro-SemiBold',
+    fontFamily: 'SourceSansPro-semibold',
     fontSize: responsiveFontSize(4.2),
   },
   SourceSansPro_Regular_28: {
-    fontFamily: 'SourceSansPro-Regular',
+    fontFamily: 'SourceSansPro-regular',
     fontSize: responsiveFontSize(3.7),
   },
   SourceSansPro_SemiBold_28: {
-    fontFamily: 'SourceSansPro-SemiBold',
+    fontFamily: 'SourceSansPro-semibold',
     fontSize: responsiveFontSize(3.7),
   },
   SourceSansPro_Regular_24: {
-    fontFamily: 'SourceSansPro-Regular',
+    fontFamily: 'SourceSansPro-regular',
     fontSize: responsiveFontSize(3.2),
   },
   SourceSansPro_SemiBold_24: {
-    fontFamily: 'SourceSansPro-SemiBold',
+    fontFamily: 'SourceSansPro-semibold',
     fontSize: responsiveFontSize(3.2),
   },
   SourceSansPro_Regular_20: {
-    fontFamily: 'SourceSansPro-Regular',
+    fontFamily: 'SourceSansPro-regular',
     fontSize: responsiveFontSize(2.6),
   },
   SourceSansPro_Regular_18: {
-    fontFamily: 'SourceSansPro-Regular',
+    fontFamily: 'SourceSansPro-regular',
     fontSize: responsiveFontSize(2.6),
   },
   SourceSansPro_Regular_16: {
-    fontFamily: 'SourceSansPro-Regular',
+    fontFamily: 'SourceSansPro-regular',
     fontSize: responsiveFontSize(2.1),
   },
   SourceSansPro_SemiBold_16: {
-    fontFamily: 'SourceSansPro-SemiBold',
+    fontFamily: 'SourceSansPro-semibold',
     fontSize: responsiveFontSize(2.1),
   },
   SourceSansPro_Regular_14: {
-    fontFamily: 'SourceSansPro-Regular',
+    fontFamily: 'SourceSansPro-regular',
     fontSize: responsiveFontSize(1.8),
   },
   SourceSansPro_SemiBold_14: {
-    fontFamily: 'SourceSansPro-SemiBold',
+    fontFamily: 'SourceSansPro-semibold',
     fontSize: responsiveFontSize(1.8),
   },
   SourceSansPro_Regular_12: {
-    fontFamily: 'SourceSansPro-Regular',
+    fontFamily: 'SourceSansPro-regular',
     fontSize: responsiveFontSize(1.6),
   },
   SourceSansPro_Regular_10: {
-    fontFamily: 'SourceSansPro-SemiBold',
+    fontFamily: 'SourceSansPro-semibold',
     fontSize: responsiveFontSize(1.4),
   },
 };

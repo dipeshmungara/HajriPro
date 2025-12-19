@@ -62,7 +62,7 @@ const CardDetails = ({navigation}) => {
   const renderCard = () => {
     return (
       <Image
-        source={{uri: 'https://george-fx.github.io/apitex/cards/03.png'}}
+        source={{uri: 'https://george-fx.github.io/hajripro/cards/03.png'}}
         style={{
           width: responsiveWidth(65),
           aspectRatio: 1.586,

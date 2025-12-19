@@ -46,7 +46,7 @@ const EditPersonalInfo = ({navigation}) => {
               justifyContent: 'center',
               alignItems: 'center',
             }}
-            source={{uri: 'https://george-fx.github.io/apitex/users/01.png'}}
+            source={require('../assets/icons/user.png')}
           >
             <View
               style={{

@@ -66,7 +66,7 @@ const FundTransfer = ({navigation}) => {
           }}
         >
           <Image
-            source={{uri: 'https://george-fx.github.io/apitex/users/02.png'}}
+            source={{uri: 'https://george-fx.github.io/hajripro/users/02.png'}}
             style={{
               width: responsiveWidth(8),
               aspectRatio: 1 / 1,

@@ -12,18 +12,18 @@ import {theme} from '../constants';
 const cards = [
   {
     id: 1,
-    card: 'https://george-fx.github.io/apitex/cards/01.jpg',
+    card: 'https://george-fx.github.io/hajripro/cards/01.jpg',
   },
   {
     id: 2,
-    card: 'https://george-fx.github.io/apitex/cards/02.jpg',
+    card: 'https://george-fx.github.io/hajripro/cards/02.jpg',
   },
 ];
 
 const ongoingCredits = [
   {
     id: 1,
-    card: 'https://george-fx.github.io/apitex/cards/04.png',
+    card: 'https://george-fx.github.io/hajripro/cards/04.png',
   },
 ];
 

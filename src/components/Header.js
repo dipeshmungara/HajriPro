@@ -98,9 +98,7 @@ const Header = ({
           onPress={() => navigation.navigate('Profile')}
         >
           <Image
-            source={{
-              uri: 'https://george-fx.github.io/apitex/users/01.png',
-            }}
+            source={require('../assets/icons/user.png')}
             style={{
               width: responsiveWidth(7),
               marginRight: 10,

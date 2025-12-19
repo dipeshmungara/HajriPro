@@ -43,7 +43,7 @@ const SignIn = ({navigation}) => {
             marginBottom: theme.sizes.marginBottom_30,
           }}
         >
-          Welcome to Apitex!
+          Welcome to HajriPro!
         </Text>
         <components.InputField
           emailIcon={true}

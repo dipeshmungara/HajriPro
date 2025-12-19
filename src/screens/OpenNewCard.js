@@ -9,8 +9,8 @@ import {components} from '../components';
 import {theme} from '../constants';
 
 const cards = [
-  'https://george-fx.github.io/apitex/cards/01.jpg',
-  'https://george-fx.github.io/apitex/cards/02.jpg',
+  'https://george-fx.github.io/hajripro/cards/01.jpg',
+  'https://george-fx.github.io/hajripro/cards/02.jpg',
 ];
 
 const OpenNewCard = ({navigation}) => {
@@ -220,7 +220,7 @@ const OpenNewCard = ({navigation}) => {
           >
             <Image
               source={{
-                uri: 'https://george-fx.github.io/apitex/payment/01.png',
+                uri: 'https://george-fx.github.io/hajripro/payment/01.png',
               }}
               style={{width: 40.43, height: 12}}
               tintColor={
@@ -247,7 +247,7 @@ const OpenNewCard = ({navigation}) => {
           >
             <Image
               source={{
-                uri: 'https://george-fx.github.io/apitex/payment/02.png',
+                uri: 'https://george-fx.github.io/hajripro/payment/02.png',
               }}
               style={{width: 26.35, height: 16}}
             />

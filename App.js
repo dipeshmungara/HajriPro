@@ -13,9 +13,16 @@ import store from './src/store/store';
 import StackNavigator from './src/navigation/StackNavigator';
 
 export default function App() {
-  const [fontsLoaded] = useFonts({
+  const [fontsLoaded, fontError] = useFonts({
+    // Register fonts with exact names as used in theme (lowercase for Android compatibility)
+    'SourceSansPro-regular': require('./src/assets/fonts/SourceSansPro-Regular.ttf'),
+    'SourceSansPro-semibold': require('./src/assets/fonts/SourceSansPro-SemiBold.ttf'),
+    // Also register uppercase versions for iOS
     'SourceSansPro-Regular': require('./src/assets/fonts/SourceSansPro-Regular.ttf'),
     'SourceSansPro-SemiBold': require('./src/assets/fonts/SourceSansPro-SemiBold.ttf'),
+    // Full lowercase for extra compatibility
+    'sourcesanspro-regular': require('./src/assets/fonts/SourceSansPro-Regular.ttf'),
+    'sourcesanspro-semibold': require('./src/assets/fonts/SourceSansPro-SemiBold.ttf'),
   });
 
   const onLayoutRootView = useCallback(async () => {
@@ -23,6 +30,10 @@ export default function App() {
       await SplashScreen.hideAsync();
     }
   }, [fontsLoaded]);
+
+  if (fontError) {
+    console.error('Font loading error:', fontError);
+  }
 
   if (!fontsLoaded) {
     return null;
